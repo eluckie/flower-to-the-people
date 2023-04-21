@@ -34,7 +34,36 @@ body {
 }
 
 #spotlight {
-  border: 2px solid black;
+  border: 2px solid darkgreen;
+  border-radius: 0.75rem;
   padding: 10px;
   margin: 10px;
+}
+
+#purple-accent {
+  color: rgb(99, 14, 118);
+}
+
+#yellow-accent {
+  color: goldenrod;
+}
+
+#small-icon {
+  width: 40px;
+}
+
+#icon-border {
+  width: 60px;
+}
+
+#details {
+  border: 2px dotted goldenrod;
+  border-radius: 0.75rem;
+  width: 350px;
+  margin: auto;
+}
+
+#blurb {
+  width: 700px;
+  margin: auto;
 }
