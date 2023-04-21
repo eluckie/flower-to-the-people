@@ -16,7 +16,7 @@
 ## Description
 
 This site acts as a simple tool to keep track of inventory for a faux flower business. Upon opening or refreshing the site, the default tab is the _**spotlight**_ tab. From every page, users are able to navigate to the _**about us**_ page, _**shop**_ page, _**spotlight**_ page, or the _**new flower**_ page. From the **shop** page, users are able to click on any flower to navigate to that flower's detail page, where they are able to edit, delete, buy, or restock.
-
+<br/><br/>
 
 | this link | displays a page that shows... |
 | --------- | -------------------------- |
@@ -24,32 +24,35 @@ This site acts as a simple tool to keep track of inventory for a faux flower bus
 | _shop_ | list of current flowers in available. if no flowers are available, page will be empty |
 | _spotlight_ | three faux "top staff picks" flowers for sale |
 | _new flower_ | form to add a new flower to site |
-
-____________________
+<br/>
 
 ## Navigating the Site
+
 >![new flower form](src/img/new-flower-form.png)
+<br/>
 >* filling in all details will add a new flower to the available flowers in **shop**
 >* the default quantity for adding a new flower is by the dozen (12)
+<br/><br/><br/>
 
 
 >![flower details page showing color, name, place of origin, price per flower, number of flowers in stock, and buttons to update, delete, take a flower, or restock flowers](src/img/details-page.png)
 >* clicking _update {flower name}_ will take user to the edit flower form
 >* clicking _kill {flower name}_ will delete the flower from the site and re-route user to the **shop** page
->* clicking _take a flower_ will lower the in stock level of the selected flower. changes will reflect immediately
+>* clicking _take a flower_ will lower the in stock level of the selected flower by 1. changes will reflect immediately
 >* when down to 3 or less flowers in stock, "almost sold out" message will display on flower
 >* clicking _the button with the site icon_ will restock the selected flower. the default is by the dozen (12) and changes will be reflected immediately
-
+<br/><br/><br/>
 
 >![edit flower form](src/img/edit-flower-form.png)
 >* filling in all details will update the selected flower (noted in the yellow text by name)
 >* form must be fully filled out
 >* once updated, user is re-routed to shop page
-
+<br/><br/><br/>
 
 >![out of stock details page showing that there is no take a flower button](src/img/oos-details-page.png)
 >* when in stock level reaches 0, "currently out of stock" message displays
 >* note, there is also no _take a flower_ button if flower is out of stock, only the restock button
+<br/><br/><br/>
 
 
 ## Diagrams
