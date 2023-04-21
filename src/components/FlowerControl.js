@@ -2,7 +2,7 @@ import React from "react";
 import Spotlight from "./Spotlight";
 import AboutUs from "./AboutUs";
 import Shop from "./Shop";
-import NewFlower from "./NewFlower";
+import NewFlowerForm from "./NewFlowerForm";
 
 class FlowerControl extends React.Component {
   constructor(props) {
@@ -11,7 +11,8 @@ class FlowerControl extends React.Component {
       aboutUsVisible: false,
       shopVisible: false,
       spotlightVisible: true,
-      newFlowerVisible: false
+      newFlowerVisible: false,
+      shopList: []
     };
   }
 
@@ -48,7 +49,16 @@ class FlowerControl extends React.Component {
       shopVisible: false,
       spotlightVisible: false,
       newFlowerVisible: true
-    })
+    });
+  }
+
+  handleAddingNewFlower = (newFlower) => {
+    const newShopList = this.state.shopList.concat(newFlower);
+    this.setState({
+      shopList: newShopList,
+      newFlowerVisible: false,
+      shopVisible: true
+    });
   }
 
   render () {
@@ -57,9 +67,11 @@ class FlowerControl extends React.Component {
     if(this.state.aboutUsVisible) {
       currentlyVisibleState = <AboutUs/>
     } else if (this.state.shopVisible) {
-      currentlyVisibleState = <Shop/>
+      currentlyVisibleState = <Shop
+        flowerList={this.state.shopList}/>
     } else if (this.state.newFlowerVisible) {
-      currentlyVisibleState = <NewFlower/>
+      currentlyVisibleState = <NewFlowerForm
+        onNewFlowerCreation={this.handleAddingNewFlower}/>
     } else {
       currentlyVisibleState = <Spotlight/>
     }
