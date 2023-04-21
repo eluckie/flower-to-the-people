@@ -10,3 +10,15 @@ body {
 .center {
   text-align: center;
 }
+
+#nav-btns {
+  padding: 8px;
+  text-align: center;
+  margin: 4px;
+  border-radius: 0.5rem;
+  border-color: goldenrod;
+  background-color: rgb(99, 14, 118);
+  color: goldenrod;
+  font-weight: bold;
+  font-size: 16px;
+}
