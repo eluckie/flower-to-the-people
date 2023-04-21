@@ -14,10 +14,10 @@ function FlowerDetail(props) {
         {flower.quantity} in stock
       </p>
       <br/>
-      <button>buy</button>
-      <button>restock</button>
+      <button>take a flower</button>
+      <button>put some flowers</button>
       <br/><br/>
-      <button>update {flower.name}</button>
+      <button onClick={props.onClickingEdit}>update {flower.name}</button>
       <button>kill {flower.name}</button>
     </React.Fragment>
   );

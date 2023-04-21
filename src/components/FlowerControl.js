@@ -4,6 +4,7 @@ import AboutUs from "./AboutUs";
 import Shop from "./Shop";
 import NewFlowerForm from "./NewFlowerForm";
 import FlowerDetail from "./FlowerDetail";
+import EditFlowerForm from "./EditFlowerForm";
 
 class FlowerControl extends React.Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class FlowerControl extends React.Component {
       spotlightVisible: true,
       newFlowerVisible: false,
       shopList: [],
-      selectedFlower: null
+      selectedFlower: null,
+      editing: false
     };
   }
 
@@ -24,7 +26,8 @@ class FlowerControl extends React.Component {
       shopVisible: false,
       spotlightVisible: false,
       newFlowerVisible: false,
-      selectedFlower: null
+      selectedFlower: null,
+      editing: false
     });
   }
 
@@ -34,7 +37,8 @@ class FlowerControl extends React.Component {
       shopVisible: false,
       spotlightVisible: true,
       newFlowerVisible: false,
-      selectedFlower: null
+      selectedFlower: null,
+      editing: false
     });
   }
   
@@ -44,7 +48,8 @@ class FlowerControl extends React.Component {
       shopVisible: true,
       spotlightVisible: false,
       newFlowerVisible: false,
-      selectedFlower: null
+      selectedFlower: null,
+      editing: false
     });
   }
 
@@ -54,7 +59,8 @@ class FlowerControl extends React.Component {
       shopVisible: false,
       spotlightVisible: false,
       newFlowerVisible: true,
-      selectedFlower: null
+      selectedFlower: null,
+      editing: false
     });
   }
 
@@ -72,12 +78,41 @@ class FlowerControl extends React.Component {
     this.setState({selectedFlower: selectedFlower});
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingFlower = (flowerToEdit) => {
+    const editedShopList = this.state.shopList
+      .filter(flower => flower.id !== this.state.selectedFlower.id)
+      .concat(flowerToEdit);
+    this.setState({
+      shopList: editedShopList,
+      editing: false,
+      selectedFlower: null
+    });
+  }
+
+  handleDeletingFlower = (id) => {
+    const newShopList = this.state.shopList.filter(flower => flower.id !== id);
+    this.setState({
+      shopList: newShopList,
+      selectedFlower: null
+    });
+  }
+
   render () {
     let currentlyVisibleState = null;
 
-    if (this.state.selectedFlower != null) {
+    if(this.state.editing) {
+      currentlyVisibleState = <EditFlowerForm
+        flower={this.state.selectedFlower}
+        onEditFlower={this.handleEditingFlower}/>
+    } else if (this.state.selectedFlower != null) {
       currentlyVisibleState = <FlowerDetail
-        flower={this.state.selectedFlower}/>
+        flower={this.state.selectedFlower}
+        onClickingEdit={this.handleEditClick}
+        onClickingDelete={this.handleDeletingFlower}/>
     } else if(this.state.aboutUsVisible) {
       currentlyVisibleState = <AboutUs/>
     } else if (this.state.shopVisible) {
