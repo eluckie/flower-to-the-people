@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function FlowerDetail(props) {
 
-  const { flower } = props;
+  const { flower, onClickingDelete } = props;
 
   return (
     <React.Fragment>
@@ -18,7 +18,7 @@ function FlowerDetail(props) {
       <button>put some flowers</button>
       <br/><br/>
       <button onClick={props.onClickingEdit}>update {flower.name}</button>
-      <button>kill {flower.name}</button>
+      <button onClick={() => onClickingDelete(flower.id)}>kill {flower.name}</button>
     </React.Fragment>
   );
 }
