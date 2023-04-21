@@ -5,6 +5,10 @@ import Shop from "./Shop";
 import NewFlowerForm from "./NewFlowerForm";
 import FlowerDetail from "./FlowerDetail";
 import EditFlowerForm from "./EditFlowerForm";
+import BuyBtn from "./BuyBtn";
+import StockBtn from "./StockBtn";
+import LowStock from "./LowStock";
+import OOS from "./OOS";
 
 class FlowerControl extends React.Component {
   constructor(props) {
@@ -152,13 +156,37 @@ class FlowerControl extends React.Component {
       currentlyVisibleState = <EditFlowerForm
         flower={this.state.selectedFlower}
         onEditFlower={this.handleEditingFlower}/>
-    } else if (this.state.selectedFlower != null) {
-      currentlyVisibleState = <FlowerDetail
-        flower={this.state.selectedFlower}
-        onClickingEdit={this.handleEditClick}
-        onClickingDelete={this.handleDeletingFlower}
-        onClickingBuy={this.handleBuyingFlower}
-        onClickingStock={this.handleStockingFlower}/>
+    } else if (this.state.selectedFlower != null && this.state.selectedFlower.quantity > 3) {
+      currentlyVisibleState = 
+        <React.Fragment>
+          <FlowerDetail
+            flower={this.state.selectedFlower}
+            onClickingEdit={this.handleEditClick}
+            onClickingDelete={this.handleDeletingFlower}/>
+          <BuyBtn onClickingBuy={this.handleBuyingFlower}/>
+          <StockBtn onClickingStock={this.handleStockingFlower}/>
+        </React.Fragment>
+    } else if (this.state.selectedFlower !== null && this.state.selectedFlower.quantity <= 3 && this.state.selectedFlower.quantity > 0) {
+      currentlyVisibleState = 
+        <React.Fragment>
+          <LowStock/>
+          <FlowerDetail
+            flower={this.state.selectedFlower}
+            onClickingEdit={this.handleEditClick}
+            onClickingDelete={this.handleDeletingFlower}/>
+          <BuyBtn onClickingBuy={this.handleBuyingFlower}/>
+          <StockBtn onClickingStock={this.handleStockingFlower}/>
+        </React.Fragment>
+    } else if (this.state.selectedFlower != null && this.state.selectedFlower.quantity === 0) {
+      currentlyVisibleState = 
+      <React.Fragment>
+        <OOS/>
+        <FlowerDetail
+          flower={this.state.selectedFlower}
+          onClickingEdit={this.handleEditClick}
+          onClickingDelete={this.handleDeletingFlower}/>
+          <StockBtn onClickingStock={this.handleStockingFlower}/>
+      </React.Fragment>
     } else if(this.state.aboutUsVisible) {
       currentlyVisibleState = <AboutUs/>
     } else if (this.state.shopVisible) {
@@ -174,7 +202,7 @@ class FlowerControl extends React.Component {
 
     return (
       <React.Fragment>
-      <br/>
+        <br/>
         <div className="center">
           <button id="nav-btns" onClick={this.handleAboutUsClick}>about us</button>
           <button id="nav-btns" onClick={this.handleShopClick}>shop</button>

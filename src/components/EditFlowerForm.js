@@ -19,7 +19,7 @@ function EditFlowerForm(props) {
 
   return (
     <React.Fragment>
-      <h3>fully fill in {flower.name}'s updated details</h3>
+      <h3>completely fill {flower.name}'s updated details</h3>
       <ReusableForm
         formSubmissionHandler={handleEditFlowerFormSubmission}
         buttonText="update!"/>
