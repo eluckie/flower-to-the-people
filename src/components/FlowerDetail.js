@@ -15,7 +15,7 @@ function FlowerDetail(props) {
       </p>
       <br/>
       <button onClick={props.onClickingBuy}>take a flower</button>
-      <button onClick={props.onClickingStock}>put some flowers</button>
+      <button onClick={props.onClickingStock}>put more flowers</button>
       <br/><br/>
       <button onClick={props.onClickingEdit}>update {flower.name}</button>
       <button onClick={() => onClickingDelete(flower.id)}>kill {flower.name}</button>

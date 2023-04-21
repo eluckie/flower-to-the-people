@@ -112,6 +112,7 @@ class FlowerControl extends React.Component {
       quantity: newQty,
       id: flowerToBuy.id
     }
+
     const newShopList = this.state.shopList
       .filter(flower => flower.id !== flowerToBuy.id)
       .concat(updatedFlowerToBuy);
@@ -123,7 +124,25 @@ class FlowerControl extends React.Component {
   }
 
   handleStockingFlower = () => {
-    
+    const flowerToStock = this.state.selectedFlower;
+    const newQty = flowerToStock.quantity + 12;
+    const updatedFlowerToStock = {
+      name: flowerToStock.name,
+      origin: flowerToStock.origin,
+      color: flowerToStock.color,
+      price: flowerToStock.price,
+      quantity: newQty,
+      id: flowerToStock.id
+    }
+
+    const newShopList = this.state.shopList
+      .filter(flower => flower.id !== flowerToStock.id)
+      .concat(updatedFlowerToStock);
+    this.setState({
+      shopList: newShopList,
+      selectedFlower: null
+    });
+    this.setState({selectedFlower: updatedFlowerToStock});
   }
 
   render () {
