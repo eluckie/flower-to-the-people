@@ -3,6 +3,7 @@ import Spotlight from "./Spotlight";
 import AboutUs from "./AboutUs";
 import Shop from "./Shop";
 import NewFlowerForm from "./NewFlowerForm";
+import FlowerDetail from "./FlowerDetail";
 
 class FlowerControl extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class FlowerControl extends React.Component {
       shopVisible: false,
       spotlightVisible: true,
       newFlowerVisible: false,
-      shopList: []
+      shopList: [],
+      selectedFlower: null
     };
   }
 
@@ -21,7 +23,8 @@ class FlowerControl extends React.Component {
       aboutUsVisible: true,
       shopVisible: false,
       spotlightVisible: false,
-      newFlowerVisible: false
+      newFlowerVisible: false,
+      selectedFlower: null
     });
   }
 
@@ -30,7 +33,8 @@ class FlowerControl extends React.Component {
       aboutUsVisible: false,
       shopVisible: false,
       spotlightVisible: true,
-      newFlowerVisible: false
+      newFlowerVisible: false,
+      selectedFlower: null
     });
   }
   
@@ -39,7 +43,8 @@ class FlowerControl extends React.Component {
       aboutUsVisible: false,
       shopVisible: true,
       spotlightVisible: false,
-      newFlowerVisible: false
+      newFlowerVisible: false,
+      selectedFlower: null
     });
   }
 
@@ -48,7 +53,8 @@ class FlowerControl extends React.Component {
       aboutUsVisible: false,
       shopVisible: false,
       spotlightVisible: false,
-      newFlowerVisible: true
+      newFlowerVisible: true,
+      selectedFlower: null
     });
   }
 
@@ -61,14 +67,23 @@ class FlowerControl extends React.Component {
     });
   }
 
+  handleChangingSelectedFlower = (id) => {
+    const selectedFlower = this.state.shopList.filter(flower => flower.id === id)[0];
+    this.setState({selectedFlower: selectedFlower});
+  }
+
   render () {
     let currentlyVisibleState = null;
 
-    if(this.state.aboutUsVisible) {
+    if (this.state.selectedFlower != null) {
+      currentlyVisibleState = <FlowerDetail
+        flower={this.state.selectedFlower}/>
+    } else if(this.state.aboutUsVisible) {
       currentlyVisibleState = <AboutUs/>
     } else if (this.state.shopVisible) {
       currentlyVisibleState = <Shop
-        flowerList={this.state.shopList}/>
+        flowerList={this.state.shopList}
+        onFlowerSelection={this.handleChangingSelectedFlower}/>
     } else if (this.state.newFlowerVisible) {
       currentlyVisibleState = <NewFlowerForm
         onNewFlowerCreation={this.handleAddingNewFlower}/>

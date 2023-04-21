@@ -4,13 +4,11 @@ import PropTypes from "prop-types";
 function Flower(props) {
   return (
     <React.Fragment>
+      <br/>
       <div onClick={() => props.whenFlowerClicked(props.id)}>
         <h2>{props.color} {props.name}</h2>
         <h4>{props.origin}</h4>
-        <p>
-          ${props.price} per flower<br/>
-          {props.quantity} in stock
-        </p>
+        <p>${props.price} per flower</p>
       </div>
     </React.Fragment>
   );

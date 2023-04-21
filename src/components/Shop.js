@@ -7,6 +7,7 @@ function Shop(props) {
     <React.Fragment>
       {props.flowerList.map((flower) =>
         <Flower
+          whenFlowerClicked={props.onFlowerSelection}
           name={flower.name}
           origin={flower.origin}
           color={flower.color}
