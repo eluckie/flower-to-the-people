@@ -26,12 +26,12 @@ You are only expected to add CREATE, READ, and UPDATE functionality, though you 
 
 ## Site Diagram
 
-![site diagram]()
+![site diagram](src/img/fttp-site-diagram.png)
 
 
 ## Component Diagram
 
-![component diagram]()
+![component diagram](src/img/fttp-components.png)
 
 
 ## Setup/Installation Requirements
