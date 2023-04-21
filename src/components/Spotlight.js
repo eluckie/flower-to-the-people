@@ -19,14 +19,14 @@ function Spotlight() {
           <img src={Spot2Img} alt="bud icon in om pose"/>
           <h2 id="purple-accent">isaiah indi</h2>
           <p><em>from</em> in your dreams</p>
-          <p><strong>$2 per flower</strong></p>
+          <p><strong>$2</strong> per flower</p>
           <img id="small-icon" src={Icon} alt="site icon"/>
         </div>
         <div id="spotlight">
           <img src={Spot3Img} alt="bud icon flexing arm muscles"/>
           <h2 id="purple-accent">sally sativa</h2>
           <p><em>from</em> strong-arm central</p>
-          <p><strong>$0 per flower</strong></p>
+          <p><strong>$0</strong> per flower</p>
           <img id="small-icon" src={Icon} alt="site icon"/>
         </div>
       </div>
