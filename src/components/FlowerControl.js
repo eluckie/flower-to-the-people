@@ -101,6 +101,31 @@ class FlowerControl extends React.Component {
     });
   }
 
+  handleBuyingFlower = () => {
+    const flowerToBuy = this.state.selectedFlower;
+    const newQty = flowerToBuy.quantity - 1;
+    const updatedFlowerToBuy = {
+      name: flowerToBuy.name,
+      origin: flowerToBuy.origin,
+      color: flowerToBuy.color,
+      price: flowerToBuy.price,
+      quantity: newQty,
+      id: flowerToBuy.id
+    }
+    const newShopList = this.state.shopList
+      .filter(flower => flower.id !== flowerToBuy.id)
+      .concat(updatedFlowerToBuy);
+    this.setState({
+      shopList: newShopList,
+      selectedFlower: null
+    });
+    this.setState({selectedFlower: updatedFlowerToBuy});
+  }
+
+  handleStockingFlower = () => {
+    
+  }
+
   render () {
     let currentlyVisibleState = null;
 
@@ -112,7 +137,9 @@ class FlowerControl extends React.Component {
       currentlyVisibleState = <FlowerDetail
         flower={this.state.selectedFlower}
         onClickingEdit={this.handleEditClick}
-        onClickingDelete={this.handleDeletingFlower}/>
+        onClickingDelete={this.handleDeletingFlower}
+        onClickingBuy={this.handleBuyingFlower}
+        onClickingStock={this.handleStockingFlower}/>
     } else if(this.state.aboutUsVisible) {
       currentlyVisibleState = <AboutUs/>
     } else if (this.state.shopVisible) {
