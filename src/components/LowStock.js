@@ -2,7 +2,7 @@ import React from "react";
 
 function LowStock() {
   return (
-      <h5>ALMOST SOLD OUT!</h5>
+      <h5 id="yellow-accent" className="center">ALMOST SOLD OUT!</h5>
   );
 }
 

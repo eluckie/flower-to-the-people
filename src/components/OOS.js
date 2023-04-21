@@ -2,7 +2,7 @@ import React from "react";
 
 function OOS() {
   return (
-    <h5>CURRENTLY OUT OF STOCK</h5>
+    <h5 id="purple-accent" className="center">CURRENTLY OUT OF STOCK</h5>
   );
 }
 

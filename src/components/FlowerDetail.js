@@ -7,19 +7,21 @@ function FlowerDetail(props) {
 
   return (
     <React.Fragment>
-      <h2>{flower.color} {flower.name}</h2>
-      <h4>{flower.origin}</h4>
-      <p>
-        ${flower.price} per flower<br/>
-        {flower.quantity} in stock
-      </p>
-      <br/>
-      <p>
-        <span id="padding" onClick={props.onClickingEdit}>update {flower.name}</span>
-        <span id="padding" onClick={() => onClickingDelete(flower.id)}>kill {flower.name}</span>
-      </p>
-      <hr/>
-      <br/>
+      <div className="center">
+        <h2>{flower.color} {flower.name}</h2>
+        <h4>{flower.origin}</h4>
+        <p>
+          ${flower.price} per flower<br/>
+          {flower.quantity} in stock
+        </p>
+        <br/>
+        <p>
+          <span id="padding" onClick={props.onClickingEdit}>update {flower.name}</span>
+          <span id="padding" onClick={() => onClickingDelete(flower.id)}>kill {flower.name}</span>
+        </p>
+        <hr/>
+        <br/>
+      </div>
     </React.Fragment>
   );
 }

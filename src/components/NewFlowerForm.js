@@ -19,6 +19,7 @@ function NewFlowerForm(props) {
 
   return (
     <React.Fragment>
+      <h2 className="center" id="yellow-accent">enter flower details</h2>
       <ReusableForm
         formSubmissionHandler={handleNewFlowerFormSubmission}
         buttonText="let's grow"/>

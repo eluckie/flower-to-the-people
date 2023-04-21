@@ -5,17 +5,19 @@ import PropTypes from "prop-types";
 function Shop(props) {
   return (
     <React.Fragment>
-      {props.flowerList.map((flower) =>
-        <Flower
-          whenFlowerClicked={props.onFlowerSelection}
-          name={flower.name}
-          origin={flower.origin}
-          color={flower.color}
-          price={flower.price}
-          quantity={flower.quantity}
-          id={flower.id}
-          key={flower.id}/>
-      )}
+      <div id="shop-wrapper">
+        {props.flowerList.map((flower) =>
+          <Flower
+            whenFlowerClicked={props.onFlowerSelection}
+            name={flower.name}
+            origin={flower.origin}
+            color={flower.color}
+            price={flower.price}
+            quantity={flower.quantity}
+            id={flower.id}
+            key={flower.id}/>
+        )}
+      </div>
     </React.Fragment>
   );
 }

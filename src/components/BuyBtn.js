@@ -4,7 +4,9 @@ import PropTypes from "prop-types";
 function BuyBtn(props) {
   return (
     <React.Fragment>
-      <button onClick={props.onClickingBuy}>take a flower</button>
+      <div className="center">
+        <button id="yellow-btn" onClick={props.onClickingBuy}>take a flower</button>
+      </div>
     </React.Fragment>
   );
 }

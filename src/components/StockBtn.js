@@ -4,7 +4,10 @@ import PropTypes from "prop-types";
 function StockBtn(props) {
   return (
     <React.Fragment>
-      <button onClick={props.onClickingStock}>put more flowers</button>
+      <div className="center">
+        <br/>
+        <button id="stock-btn" onClick={props.onClickingStock}></button>
+      </div>
     </React.Fragment>
   );
 }

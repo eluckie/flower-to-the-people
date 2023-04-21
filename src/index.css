@@ -67,3 +67,44 @@ body {
   width: 700px;
   margin: auto;
 }
+
+#yellow-btn {
+  background-color: goldenrod;
+  border-radius: 0.5rem;
+  padding: 6px;
+  color: darkgreen;
+  font-weight: bold;
+  border-color: darkgreen;
+}
+
+#green-btn {
+  background-color: darkgreen;
+  border-radius: 0.5rem;
+  padding: 6px;
+  color: goldenrod;
+  font-weight: bold;
+  border-color: goldenrod;
+}
+
+#forms {
+  border: 2px dotted rgb(99, 14, 118);
+  border-radius: 0.75rem;
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+}
+
+#shop-list {
+  border: 2px dotted black;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+}
+
+#stock-btn {
+  background-image: url("./img/flower-icon.png");
+  background-size: 80px;
+  padding: 40px;
+  border-radius: 0.75rem;
+  border-color: darkgreen;
+}
