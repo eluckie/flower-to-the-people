@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Icon from "./../img/flower-icon.png";
 
 function ReusableForm(props) {
   return (
@@ -29,6 +30,11 @@ function ReusableForm(props) {
             <br/><br/>
             <button id="green-btn" type="submit">{props.buttonText}</button>
           </form>
+        <br/><br/>
+        <img id="icon-border" src={Icon} alt="site icon"/>
+        <img id="icon-border" src={Icon} alt="site icon"/>
+        <img id="icon-border" src={Icon} alt="site icon"/>
+        <img id="icon-border" src={Icon} alt="site icon"/>
         </div>
       </div>
     </React.Fragment>

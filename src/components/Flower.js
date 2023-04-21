@@ -5,7 +5,7 @@ function Flower(props) {
   return (
     <React.Fragment>
       <br/>
-      <div id="shop-list" onClick={() => props.whenFlowerClicked(props.id)}>
+      <div onClick={() => props.whenFlowerClicked(props.id)}>
         <h2 id="purple-accent">{props.color} {props.name}</h2>
         <h4><em>{props.origin}</em></h4>
         <p>${props.price} per flower</p>

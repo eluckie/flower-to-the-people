@@ -7,15 +7,17 @@ function Shop(props) {
     <React.Fragment>
       <div id="shop-wrapper">
         {props.flowerList.map((flower) =>
-          <Flower
-            whenFlowerClicked={props.onFlowerSelection}
-            name={flower.name}
-            origin={flower.origin}
-            color={flower.color}
-            price={flower.price}
-            quantity={flower.quantity}
-            id={flower.id}
-            key={flower.id}/>
+          <div id="shop-list">
+            <Flower
+              whenFlowerClicked={props.onFlowerSelection}
+              name={flower.name}
+              origin={flower.origin}
+              color={flower.color}
+              price={flower.price}
+              quantity={flower.quantity}
+              id={flower.id}
+              key={flower.id}/>
+          </div>
         )}
       </div>
     </React.Fragment>

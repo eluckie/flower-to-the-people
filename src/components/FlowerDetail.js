@@ -8,16 +8,16 @@ function FlowerDetail(props) {
   return (
     <React.Fragment>
       <div className="center">
-        <h2>{flower.color} {flower.name}</h2>
-        <h4>{flower.origin}</h4>
+        <h2 id="purple-accent">{flower.color} {flower.name}</h2>
+        <h4><em>originating from {flower.origin}</em></h4>
         <p>
           ${flower.price} per flower<br/>
-          {flower.quantity} in stock
+          <span id="yellow-accent"><strong>{flower.quantity}</strong></span> in stock
         </p>
         <br/>
         <p>
-          <span id="padding" onClick={props.onClickingEdit}>update {flower.name}</span>
-          <span id="padding" onClick={() => onClickingDelete(flower.id)}>kill {flower.name}</span>
+          <span id="edit-update-links"><span id="padding" onClick={props.onClickingEdit}>update {flower.name}</span></span>
+          <span id="edit-update-links"><span id="padding" onClick={() => onClickingDelete(flower.id)}>kill {flower.name}</span></span>
         </p>
         <hr/>
         <br/>
