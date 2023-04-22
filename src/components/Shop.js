@@ -7,7 +7,7 @@ function Shop(props) {
     <React.Fragment>
       <div id="shop-wrapper">
         {props.flowerList.map((flower) =>
-          <div id="shop-list">
+          <div id="shop-list" key={flower.id}>
             <Flower
               whenFlowerClicked={props.onFlowerSelection}
               name={flower.name}
@@ -15,8 +15,7 @@ function Shop(props) {
               color={flower.color}
               price={flower.price}
               quantity={flower.quantity}
-              id={flower.id}
-              key={flower.id}/>
+              id={flower.id}/>
           </div>
         )}
       </div>

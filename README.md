@@ -29,7 +29,6 @@ This site acts as a simple tool to keep track of inventory for a faux flower bus
 ## Navigating the Site
 
 >![new flower form](src/img/new-flower-form.png)
-<br/>
 >* filling in all details will add a new flower to the available flowers in **shop**
 >* the default quantity for adding a new flower is by the dozen (12)
 <br/><br/><br/>
