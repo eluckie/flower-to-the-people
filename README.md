@@ -26,6 +26,9 @@ This site acts as a simple tool to keep track of inventory for a faux flower bus
 | _new flower_ | form to add a new flower to site |
 <br/>
 
+[Click here](https://eluckie.github.io/flower-to-the-people/) to view the live version of this flower shop webpage
+<br/><br/>
+
 ## Navigating the Site
 
 >![new flower form](src/img/new-flower-form.png)
